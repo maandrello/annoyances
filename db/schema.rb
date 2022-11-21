@@ -10,8 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_21_165810) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "annoyances", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "price"
+    t.boolean "availability"
+    t.string "category"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_annoyances_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "status"
+    t.datetime "starting_time"
+    t.datetime "ending_time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "annoyance_id", null: false
+    t.index ["annoyance_id"], name: "index_bookings_on_annoyance_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "annoyances", "users"
+  add_foreign_key "bookings", "annoyances"
+  add_foreign_key "bookings", "users"
 end
