@@ -1,1 +1,10 @@
-<h1>show</h1>
+<h1><%= @annoyance.name %></h1>
+<ul>
+  <li><%= @annoyance.description %></li>
+  <li><%= @annoyance.price %></li>
+  <li><%= @annoyance.category %></li>
+  <li><%= @annoyance.rating %></li>
+  <li><%= @annoyance.availability %></li></ul>
+</ul>
+
+<%= link_to 'Annoyances index', annoyances_path%>

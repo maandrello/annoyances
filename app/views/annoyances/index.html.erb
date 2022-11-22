@@ -1,9 +1,9 @@
 <h1>Annoyances</h1>
     <ul>
-      <% @annoyances.each do |annoyance| %>
-        <li><%= link_to annoyance.name, show_path(annoyance) %></li>
-        <li><%= annoyance.name %></li>
-        <% end %>
+      <% @annoyances.order(:name).each do |annoyance| %>
+
+        <li><%= link_to annoyance.name, annoyance_path(annoyance) %></li>
+      <% end %>
     </ul>
 
 
