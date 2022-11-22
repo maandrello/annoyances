@@ -1,8 +1,12 @@
 <h1>Annoyances</h1>
     <ul>
       <% @annoyances.order(:name).each do |annoyance| %>
-
         <li><%= link_to annoyance.name, annoyance_path(annoyance) %></li>
+        <li><%= annoyance.description %></li>
+        <li><%= annoyance.category %></li>
+        <li><%= annoyance.rating %></li>
+        <li><%= annoyance.price %></li>
+        <li><%= annoyance.availability %></li>
       <% end %>
     </ul>
 
