@@ -7,15 +7,15 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-
 user = User.last
 annoy = Annoyance.new(name: "Albert Eggstein", description: "You can rent Albert Eggstein to annoy your loved one. Albert Eggstein will be more than happy to chase him if he starts running and he is the most annoying singer that there is, singing at the most inappropriate times you can think of", category: "Animals", price: 50, availability: true, rating: 2)
 annoy.user = user
 annoy.save
+annoy.save
 annoy = Annoyance.new(name: "Beans", description: "Beans is a very friendly chimpanzee and loves hugging people. He’s not very good at understanding personal space and can be very annoying.", category: "Animals", price: 500, availability: true, rating: 2)
 annoy.user = user
 annoy.save
-annoy = Annoyance.new(name: "Jail", description: "You know when you are sick of someone and just want to get them away for a break? You can literally send them to jail! We promise that nothing harmful will happen to them, but they will be as bored as you can get!.", category: "Objects", price: 200, availability: true, rating: 2)
+annoy = Annoyance.new(name: "Jail", description: "You know when you are sick of someone and just want to get them away for a break? You can literally send them to jail! We promise that nothing harmful will happen to them, but they will be as bored as you can get!.", category: "Objects", price: 200, availability: false, rating: 2)
 annoy.user = user
 annoy.save
 annoy = Annoyance.new(name: "Sound car", description: "If you want to embarrass someone and at the same time let them know how much they mean to you this is the choice for you! All you have to do is tell us what the occasion is and we will come up with a special message to inform your significant one how much they mean to you, in the most public and embarrassing way!.", category: "Sounds", price: 200, availability: true, rating: 3)
