@@ -1,0 +1,10 @@
+<h1>Annoyances</h1>
+    <ul>
+      <% @annoyances.each do |annoyance| %>
+        <li><%= link_to annoyance.name, show_path(annoyance) %></li>
+        <li><%= annoyance.name %></li>
+        <% end %>
+    </ul>
+
+
+<%= link_to "Create new annoyance", new_annoyance_path %>

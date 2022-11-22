@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "home#index"
+  root to: "annoyances#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  resources :annoyances, only: [:new, :create, :show, :index]
+  # resources :bookings, only: [:index, :accepted, :rejected]
+
 end

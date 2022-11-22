@@ -1,0 +1,13 @@
+<h1>Create new annoyance</h1>
+
+<%= simple_form_for @annoyance do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :rating %>
+  <%= f.input :availability %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Go back", annoyances_path %>

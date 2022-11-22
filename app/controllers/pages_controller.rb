@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
-  def home
+  def index
+    @annoyances = Annoyance.all
   end
 end
