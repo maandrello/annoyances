@@ -1,9 +1,12 @@
 <h1>Annoyance's bookings</h1>
 
     <ul>
-      <% @bookings.each do |booking| %>
-        <li> <%= link_to booking.status, new_booking_path %> </li>
+      <% @annoyance.bookings.each do |booking| %>
+        <li> <% "" %> </li>
         <% end %>
     </ul>
 
-<a class="btn btn-ghost" href="#"><%= link_to "Book an annoyance", new_booking_path %></a>
+
+<%= link_to "Go back", annoyances_path, class: 'btn-ghost' %>
+<br>
+<br>

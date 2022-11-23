@@ -1,5 +1,7 @@
+<br>
 <h1>Annoying someone</h1>
-
+<br>
+<br>
 Please enter your payment details:<br>
 <input type="text" class="form-control" id="payment information" placeholder="Device Name" value=" "/>
 <br>
@@ -14,7 +16,7 @@ Please include additional information. <br>
 <%= text_field_tag "name_id", "Please include the name of the person that will be annoyed", placeholder: "Device Name", class: "form-control" %>
 <br>
 
-<%= simple_form_for @booking do |f| %>
+<%= simple_form_for [@annoyance, @booking] do |f| %>
   <p>Please include your availability</p>
   <%= f.input :starting_time %>
   <%= f.input :ending_time %>
@@ -26,7 +28,7 @@ Please include additional information. <br>
 <%# <%= month_calendar(attribute: :starting_date, end_attribute: :ending_date) do |date| %>
   <%# <%= date %>
 <%# <% end %>
-<%= link_to "List of Bookings", bookings_path, class: 'btn-ghost' %>
+<%= link_to "List of Bookings", annoyance_bookings_path(@annoyance), class: 'btn-ghost' %>
 <br>
 <br>
 <%= link_to "Go back", annoyances_path, class: 'btn-ghost'%>
