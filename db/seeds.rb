@@ -13,23 +13,15 @@ annoy = Annoyance.new(name: "Albert Eggstein", description: "You can rent Albert
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
-<<<<<<< HEAD
 
 file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132924/Annoyances/beans_xllyfv.jpg")
-=======
-annoy.save
->>>>>>> 77073cdc6c5e52ca3d940fb045d57b931475383e
 annoy = Annoyance.new(name: "Beans", description: "Beans is a very friendly chimpanzee and loves hugging people. He’s not very good at understanding personal space and can be very annoying.", category: "Animals", price: 500, availability: true, rating: 2)
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
-<<<<<<< HEAD
 
 file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132922/Annoyances/baby_hgvjta.jpg")
 annoy = Annoyance.new(name: "Jail", description: "You know when you are sick of someone and just want to get them away for a break? You can literally send them to jail! We promise that nothing harmful will happen to them, but they will be as bored as you can get!.", category: "Objects", price: 200, availability: true, rating: 2)
-=======
-annoy = Annoyance.new(name: "Jail", description: "You know when you are sick of someone and just want to get them away for a break? You can literally send them to jail! We promise that nothing harmful will happen to them, but they will be as bored as you can get!.", category: "Objects", price: 200, availability: false, rating: 2)
->>>>>>> 77073cdc6c5e52ca3d940fb045d57b931475383e
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
