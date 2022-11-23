@@ -1,13 +1,47 @@
-<h1>Annoyances</h1>
-    <ul>
-      <% @annoyances.order(:name).each do |annoyance| %>
-
-        <li><%= link_to annoyance.name, annoyance_path(annoyance) %></li>
-        <li><%= link_to annoyance.description, annoyance_path(annoyance) %></li>
-
-      <% end %>
-    </ul>
-
+<div class="head-create">
+  <h1>Annoyances</h1>
+  <div class="create-btn">
+    <p>
+      <%= link_to "Create new annoyance", new_annoyance_path, class: 'btn btn-primary'%>
+    </p>
+  </div>
+</div>
 
 
-<%= link_to "Create new annoyance", new_annoyance_path %>
+<div class="cards">
+  <% @annoyances.order(:name).each do |annoyance| %>
+    <div class="cards-annoyance">
+      <div class="cards-annoyance-infos">
+        <div>
+          <%= link_to annoyance.name, annoyance_path(annoyance) %>
+          <br>
+          <%= annoyance.category %>
+        </div>
+        <div>
+          <% annoyance[:rating].to_i.times do %>
+            <i class="fa-solid fa-star"></i>
+          <%end%>
+
+          <% (5-annoyance[:rating]).to_i.times do %>
+            <i class="fa-regular fa-star"></i>
+          <%end%>
+          <br>
+          <%= annoyance.price %> <i class="fa-solid fa-euro-sign"></i>
+        </div>
+
+        <div class="annoyance-price-available">
+
+            <% if annoyance[:availability] %>
+              <div class="available">
+              <%= "available" %>
+              </div>
+            <%else%>
+              <div class="outofstock">
+                <%= "out of stock" %>
+              </div>
+            <%end%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
