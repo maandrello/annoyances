@@ -1,8 +1,12 @@
 <div class="head-create">
-  <h1>Annoyances</h1>
+  <div>
+    <h1>Welcome to Annoyance!</h1>
+    <p>Our concept is simple: Book one of our Annoyance to play a prank on somebody you know!</p>
+  </div>
+
   <div class="create-btn">
     <p>
-      <%= link_to "Create new annoyance", new_annoyance_path, class: 'btn btn-primary'%>
+      <%= link_to "Create new annoyance", new_annoyance_path, class: 'btn btn-ghost'%>
     </p>
   </div>
 </div>
@@ -11,6 +15,10 @@
 <div class="cards">
   <% @annoyances.order(:name).each do |annoyance| %>
     <div class="cards-annoyance">
+      <div>
+          <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+
       <div class="cards-annoyance-infos">
         <div>
           <%= link_to annoyance.name, annoyance_path(annoyance) %>
