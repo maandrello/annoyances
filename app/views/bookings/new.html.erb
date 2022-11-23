@@ -1,0 +1,29 @@
+<h1>Annoying someone</h1>
+
+<label for="Create a booking">Please enter the annoyance you want to create:</label><br>
+<input type="text" class="form-control" id="name_id" placeholder="Device Name" value=" "/> Please enter your payment details:<br>
+<input type="text" class="form-control" id="payment information" placeholder="Device Name" value=" "/>Please include additional information. <br>
+<input type="text" class="form-control" id="payment information" placeholder="Device Name" value=" "/><br>
+
+
+<label><input type="checkbox" value="" ng-model="userInfo.check"></label>
+
+<%= label_tag  "name_id", "Annoyance should be confidential" %>
+<%= text_field_tag "name_id", "Please include the name of the person that will be annoyed", placeholder: "Device Name", class: "form-control" %>
+
+
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :user_id %>
+  <%= f.input :annoyance_id %>
+  <p>Please include your availability</p>
+  <%= f.input :starting_time %>
+  <%= f.input :ending_time %>
+  <%= f.submit %>
+<% end %>
+
+
+<%# <%= month_calendar(attribute: :starting_date, end_attribute: :ending_date) do |date| %>
+  <%# <%= date %>
+<%# <% end %>
+<button type="submit" class="btn-remove btn-default"><%= link_to "List of Bookings", bookings_path %> </button><br>
+<button type="submit" class="btn-remove btn-default"><%= link_to "Go back", annoyances_path %> </button><br>
