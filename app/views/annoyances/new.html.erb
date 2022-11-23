@@ -3,9 +3,8 @@
 <%= simple_form_for @annoyance do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: Annoyance::CATEGORIES %>
   <%= f.input :price %>
-  <%= f.input :rating %>
   <%= f.input :availability %>
   <%= f.submit %>
 <% end %>

@@ -1,0 +1,81 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
+  color:beige;
+}
+
+.cards-annoyance {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.cards-annoyance > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cards-annoyance h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.cards-annoyance p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: black;
+}
+
+
+.cards-annoyance .cards-annoyance-infos {
+  padding: 16px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  color:rgb(37, 37, 37);
+}
+
+.cards-annoyance-infos .cards-annoyance-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  color: black;
+}
+
+.cards-movie {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
+
+}
+
+.annoyance-price-available{
+  float: right;
+  .available{
+    color: green;
+  }
+  .outofstock{
+    color:red;
+  }
+}
+
+.head-create
+{
+  display:grid;
+}
+
+.create-btn p{
+  flex-grow: 0;
+  float: right;
+  padding-right: 18px
+}
