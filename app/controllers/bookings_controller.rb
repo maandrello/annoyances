@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @annoyance = Annoyance.find(params[:annoyance_id])
     # if @booking.save
       # @booking.status == "accepted"
     # end
@@ -9,12 +9,16 @@ class BookingsController < ApplicationController
 
   def new
    @booking = Booking.new
+   @annoyance = Annoyance.find(params[:annoyance_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @annoyance = Annoyance.find(params[:annoyance_id])
+    @booking.annoyance = @annoyance
+    @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to annoyance_bookings_path(@annoyance)
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +27,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:starting_time, :ending_time, :status)
+    params.require(:booking).permit(:starting_time, :ending_time)
   end
 end
