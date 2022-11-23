@@ -5,8 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Annoyance.destroy_all
+User.destroy_all
 
-
+User.create(email: "maria@mail.com", password: "123456")
 user = User.last
 file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132922/Annoyances/albert_eggstein_zmeilr.jpg")
 annoy = Annoyance.new(name: "Albert Eggstein", description: "You can rent Albert Eggstein to annoy your loved one. Albert Eggstein will be more than happy to chase him if he starts running and he is the most annoying singer that there is, singing at the most inappropriate times you can think of", category: "Animals", price: 50, availability: true, rating: 2)
