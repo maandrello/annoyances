@@ -1,7 +1,6 @@
 <h1>Annoying someone</h1>
 
-<label for="Create a booking">Please enter the annoyance you want to create:</label><br>
-<input type="text" class="form-control" id="name_id" placeholder="Device Name" value=" "/> Please enter your payment details:<br>
+Please enter your payment details:<br>
 <input type="text" class="form-control" id="payment information" placeholder="Device Name" value=" "/>Please include additional information. <br>
 <input type="text" class="form-control" id="payment information" placeholder="Device Name" value=" "/><br>
 
@@ -13,8 +12,6 @@
 
 
 <%= simple_form_for @booking do |f| %>
-  <%= f.input :user_id %>
-  <%= f.input :annoyance_id %>
   <p>Please include your availability</p>
   <%= f.input :starting_time %>
   <%= f.input :ending_time %>
