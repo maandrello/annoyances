@@ -1,36 +1,13 @@
-<br>
-<h1>Annoying someone</h1>
-<br>
-<br>
-
-
-
-<br>
-Please include additional information. <br>
-<input type="text" class="form-control" id="payment information" placeholder="Device Name" value= " "/><br>
-
-
-<label><input type="checkbox" value="" ng-model="userInfo.check"></label>
-
-<%= label_tag  "name_id", "Annoyance should be confidential" %>
-<br>
-<%= text_field_tag "name_id", "Please include the name of the person that will be annoyed", placeholder: "Device Name", class: "form-control" %>
-<br>
-
 <%= simple_form_for [@annoyance, @booking] do |f| %>
   <p>Please include your availability</p>
+  <%= f.input :target %>
+  <%= f.input :info %>
   <%= f.input :starting_time %>
   <%= f.input :ending_time %>
   <%= f.submit class: 'btn-ghost' %>
 <% end %>
- <br>
-<br>
-<br>
 
-
+<div>
 <%= link_to "List of Bookings", annoyance_bookings_path(@annoyance), class: 'btn-ghost' %>
-<br>
-<br>
 <%= link_to "Go back", annoyances_path, class: 'btn-ghost'%>
-<br>
-<br>
+</div>
