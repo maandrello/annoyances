@@ -1,34 +1,36 @@
-
-
-<div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/play-prank-blue-grungy-rectangle-stamp-sign-220984392.jpg)">
-  <h1 text-center><%= @annoyance.name %></h1>
-</div>
-
-<div class="card-show-annoyance">
-  <%= cl_image_tag @annoyance.photo.key, height: 300, width: 400, crop: :fill %>
-  <div class="card-product-infos">
-  <p><extra-strong>Description:</extra-strong> </p><%= @annoyance.description %>
-  <p><extra-strong>Price(€):</extra-strong> </p><strong><%=@annoyance.price%></strong>
-  <p><extra-strong>Category:</extra-strong></p><%= @annoyance.category %>
-  <p><extra-strong>Rating:</extra-strong></p><%= @annoyance.rating %> ⭐
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<a href="">
-  <div class="button">
-    <%= link_to 'Buy an Annoyance',  new_annoyance_booking_path(@annoyance), class: 'btn-ghost'%>
-  </div>
-</a>
-<br>
-<br>
-<br>
-
 <%= link_to 'Annoyances index', annoyances_path, class: 'btn-ghost'%>
+<br>
+<br>
+<div class="card-product">
+  <%= cl_image_tag @annoyance.photo.key%>
 
+  <div class="card-product-infos">
+    <h1><%= @annoyance.name %></h1>
+    <h6><strong>Description</strong></h6>
+    <%= @annoyance.description %>
+    <br>
+    <br>
+
+    <div class="price-category">
+      <div>
+        <h6><strong>Price</strong> </h6>
+        <%=@annoyance.price%>€
+      </div>
+      <div>
+        <h6><strong>Category</strong></h6>
+        <%= @annoyance.category %>
+      </div>
+      <div>
+        <h6><strong>Rating</strong></h6>
+        <p><%= @annoyance.rating %> ⭐ </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="icon-float">
+  <%= link_to 'Buy an Annoyance',  new_annoyance_booking_path(@annoyance), class: 'btn-ghost'%>
+</div>
+<br>
 <br>
 <br>
