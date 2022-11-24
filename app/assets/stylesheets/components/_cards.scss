@@ -2,29 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  font-style: inherit;
-  font-family: Cabin;
-  font-size: 24px;
-  font-weight: bold;
-  object-fit: contain;
-  position: relative;
-  display: grid;
-  justify-content: center;
-  color: white;
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-show {
@@ -35,62 +13,27 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 16px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.card-show-annoyance > img {
-  height: 300px;
-  width: 100%;
-  object-fit: scale-down;
-}
-
-.card-show-annoyance {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-}
-
-.card-show-annoyance img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-show-annoyance h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-show-annoyance p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: 0.7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-show-annoyance .card-product-infos {
-  padding: 16px;
+  text-decoration: none;
 }
 
 .cards-annoyance {
-  overflow: hidden;
-  background: white;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-position: center;
 }
 
 .cards-annoyance > img {
-  height: 200px;
-  width: 100%;
+  height: 100%;
+  width: 300px;
   object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cards-annoyance h2 {
@@ -98,6 +41,7 @@
   font-weight: bold;
   margin: 0;
   color: black;
+  text-decoration: none;
 }
 
 .cards-annoyance p {
@@ -105,6 +49,7 @@
   opacity: 0.7;
   margin: 0;
   color: black;
+  text-decoration: none;
 }
 
 .cards-annoyance .cards-annoyance-infos {
@@ -113,22 +58,12 @@
   align-items: flex-end;
   position: relative;
   color: rgb(37, 37, 37);
+  text-decoration: none;
 }
 
-.cards-annoyance-infos .cards-annoyance-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+.cards-name {
   color: black;
-}
-
-.cards-movie {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding-left: 18px;
-  padding-right: 18px;
+  font-size: 30px;
 }
 
 .annoyance-price-available {
@@ -149,4 +84,20 @@
   flex-grow: 0;
   float: right;
   padding-right: 18px;
+}
+
+.fa-solid-fa-euro-sign {
+  height: 80px;
+  width: 80px;
+  border: rgb(0, 0, 0) 1px solid;
+  border-radius: 80%;
+  box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 15px 5px;
+  position: absolute;
+  bottom: 80px;
+  right: 40px;
+  background-color: rgb(226, 224, 224);
+  color: white;
+  font-weight: extra-bold;
+  font-size: 30px;
+  align-items: center;
 }

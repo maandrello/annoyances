@@ -6,24 +6,21 @@
     <%# <p> class="buttonhp"> %>
     <%# </p> %>
   <%# </div> %>
-</div>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/laughing-emoji-faced-friends_53876-90855.jpg);">
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bestlifeonline.com/wp-content/uploads/sites/3/2018/05/Friends-Laughing.jpg?quality=82&strip=all);">
   <div class="container">
     <h1>Welcome to Annoyance!</h1>
-      <p>Our concept is simple: Book an Annoyance to play a prank on somebody you know!</p>
+    <br>
+      <p><strong> Our concept is simple: Book an Annoyance to play a prank on somebody you know.</strong></p>
+      <p>If you want to join us and create a new annoyance, please clink here:</p>
     <p class="buttonhp">
-      <%= link_to "List your annoyance", new_annoyance_path, class: "btn btn-ghost text-white"%>
-    </p>
-    <p class="buttonhp">
-      <%= link_to "Discover the annoyances", annoyances_path, class: "btn btn-ghost text-white"%>
+      <%= link_to "Create a new annoyance", new_annoyance_path, class: "btn btn-ghost-principal text-white"%>
     </p>
   </div>
 </div>
-
 <br>
-
-<div class="searching-annoyance">
-  <h4>What are you looking for?</h4>
+ <div class="searching-annoyance" >
     <%= form_with url: annoyances_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
@@ -31,47 +28,58 @@
       placeholder: "Find a annoyance" %>
       <%= submit_tag "Search", class: "btn-ghost" %>
     <% end %>
+
+<br>
+
   <br>
 </div>
 
-<div class="cards">
-  <% @annoyances.order(:name).each do |annoyance| %>
-    <div class="cards-annoyance">
-      <div>
-        <% if annoyance.photo.attached? %>
-          <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <% image_tag "stock.png" %>
-        <% end %>
-      </div>
-      <div class="cards-annoyance-infos">
+<div class="container">
+  <div class="cards">
+    <% @annoyances.order(:name).each do |annoyance| %>
+      <div class="cards-annoyance">
         <div>
-          <%= link_to annoyance.name, annoyance_path(annoyance) %>
-          <br>
-          <%= annoyance.category %>
+          <% if annoyance.photo.attached? %>
+            <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <% image_tag "stock.png" %>
+          <% end %>
         </div>
-        <div>
-          <% annoyance[:rating].to_i.times do %>
-            <i class="fa-solid fa-star"></i>
-          <%end%>
-          <% (5-annoyance[:rating]).to_i.times do %>
-            <i class="fa-regular fa-star"></i>
-          <%end%>
-          <br>
-          <%= annoyance.price %> <i class="fa-solid fa-euro-sign"></i>
-        </div>
-        <div class="annoyance-price-available">
-            <% if annoyance[:availability] %>
-              <div class="available">
-              <%= "available" %>
-              </div>
-            <%else%>
-              <div class="outofstock">
-                <%= "out of stock" %>
-              </div>
+        <div class="cards-annoyance-infos">
+          <div>
+            <%= link_to annoyance.name, annoyance_path(annoyance) %>
+            <br>
+            <%= annoyance.category %>
+          </div>
+          <div>
+            <% unless annoyance.rating.nil? %>
+            <% annoyance.rating.to_i.times do %>
+              <i class=“fa-solid fa-star”></i>
             <%end%>
+            <% (5-annoyance.rating).to_i.times do %>
+              <i class=“fa-regular fa-star”></i>
+            <%end%>
+          <%end%>
+            <br>
+             <p class="fa-solid-fa-euro-sign">  <%= annoyance.price %>   </p>
+          </div>
+          <div class="annoyance-price-available">
+              <% if annoyance[:availability] %>
+                <div class="available">
+                <%= "Available" %>
+                </div>
+              <%else%>
+                <div class="outofstock" >
+                  <%= "Out of stock" %>
+                </div>
+              <%end%>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+    <br>
+    <br>
+  </div>
 </div>
+<br>
+<br>
