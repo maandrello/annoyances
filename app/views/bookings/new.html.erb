@@ -2,11 +2,12 @@
 <h1>Annoying someone</h1>
 <br>
 <br>
-Please enter your payment details:<br>
-<input type="text" class="form-control" id="payment information" placeholder="Device Name" value=" "/>
+
+
+
 <br>
 Please include additional information. <br>
-<input type="text" class="form-control" id="payment information" placeholder="Device Name" value=" "/><br>
+<input type="text" class="form-control" id="payment information" placeholder="Device Name" value= " "/><br>
 
 
 <label><input type="checkbox" value="" ng-model="userInfo.check"></label>
@@ -25,9 +26,9 @@ Please include additional information. <br>
  <br>
 <br>
 <br>
-<%# <%= month_calendar(attribute: :starting_date, end_attribute: :ending_date) do |date| %>
-  <%# <%= date %>
-<%# <% end %>
+<% <%= month_calendar(attribute: :starting_date, end_attribute: :ending_date) do |date| %>
+  <% date %>
+<% <% end %>
 <%= link_to "List of Bookings", annoyance_bookings_path(@annoyance), class: 'btn-ghost' %>
 <br>
 <br>
