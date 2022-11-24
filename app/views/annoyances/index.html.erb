@@ -15,7 +15,11 @@
   <% @annoyances.order(:name).each do |annoyance| %>
     <div class="cards-annoyance">
       <div>
+        <% if annoyance.photo.attached? %>
           <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <% image_tag "stock.png" %>
+        <% end %>
       </div>
 
       <div class="cards-annoyance-infos">
