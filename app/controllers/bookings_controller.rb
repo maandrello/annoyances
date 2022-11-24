@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
+    @booking = Booking.all
     @annoyance = Annoyance.find(params[:annoyance_id])
     # if @booking.save
       # @booking.status == "accepted"
@@ -8,8 +9,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-   @booking = Booking.new
-   @annoyance = Annoyance.find(params[:annoyance_id])
+    @booking = Booking.new
+    @annoyance = Annoyance.find(params[:annoyance_id])
   end
 
   def create
@@ -27,6 +28,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:starting_time, :ending_time)
+    params.require(:booking).permit(:starting_time, :ending_time, :info, :target)
   end
 end
