@@ -31,6 +31,6 @@ class AnnoyancesController < ApplicationController
   end
 
   def annoyance_params
-    params.require(:annoyance).permit(:name, :description, :category, :price, :rating, :availability)
+    params.require(:annoyance).permit(:name, :description, :category, :price, :rating, :availability, :photo)
   end
 end
