@@ -2,8 +2,13 @@ class AnnoyancesController < ApplicationController
   before_action :set_annoyance, only: [:edit, :show, :update, :destroy]
 
   def index
+    if params[:query].present?
+      @annoyances = Annoyance.where("name ILIKE ?", "%#{params[:query]}%")
+    else
     @annoyances = Annoyance.all
+    end
   end
+
 
   def show
     @annoyance = Annoyance.find(params[:id])
@@ -31,6 +36,6 @@ class AnnoyancesController < ApplicationController
   end
 
   def annoyance_params
-    params.require(:annoyance).permit(:name, :description, :category, :price, :rating, :availability)
+    params.require(:annoyance).permit(:name, :description, :category, :price, :rating, :availability, :photo)
   end
 end

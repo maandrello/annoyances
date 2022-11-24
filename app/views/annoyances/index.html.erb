@@ -1,23 +1,46 @@
-<div class="banner m-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://plus.unsplash.com/premium_photo-1663051303500-c85bef3f05f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZnVuJTIwd2l0aCUyMGZyaWVuZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);">
+<%# <% <div class="banner m-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://plus.unsplash.com/premium_photo-1663051303500-c85bef3f05f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZnVuJTIwd2l0aCUyMGZyaWVuZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);">%>
+
+  <%# <div class="container"> %>
+    <%# <h1>Welcome to Annoyance!</h1> %>
+      <%# <p></p> %>
+    <%# <p> class="buttonhp"> %>
+    <%# </p> %>
+  <%# </div> %>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/laughing-emoji-faced-friends_53876-90855.jpg);">
   <div class="container">
-    <h1>Welcome to Annoyance!</h1>
-      <p>Our concept is simple: Book an Annoyance to play a prank on somebody you know!</p>
-    <p class="buttonhp">
-    <%= link_to "List your annoyance", new_annoyance_path, class: "btn btn-ghost text-white"%>
-    </p>
-    <p class="buttonhp">
-    <%= link_to "Discover the annoyances", annoyances_path, class: "btn btn-ghost text-white"%>
-    </p>
+    <h1>Welcome to <strong>Annoyance!</strong></h1>
+    <br>
+    <p>Our concept is simple: Book an Annoyance to play a <strong>prank</strong> on somebody you know!</p>
+    <p>If you have a nice idea and you want to sell your prank, please join us and click below:</p>
+    <%= link_to "I want to sell my prank!", new_annoyance_path, class: "btn-ghost-banner background-color-lightgrey text-black"%>
   </div>
+</div>
+
+<br>
+
+<div class="searching-annoyance">
+  <h4>What are you looking for?</h4>
+    <%= form_with url: annoyances_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a annoyance" %>
+      <%= submit_tag "Search", class: "btn-ghost" %>
+    <% end %>
+  <br>
 </div>
 
 <div class="cards">
   <% @annoyances.order(:name).each do |annoyance| %>
     <div class="cards-annoyance">
       <div>
+        <% if annoyance.photo.attached? %>
           <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <% image_tag "stock.png" %>
+        <% end %>
       </div>
-
       <div class="cards-annoyance-infos">
         <div>
           <%= link_to annoyance.name, annoyance_path(annoyance) %>
@@ -28,16 +51,13 @@
           <% annoyance[:rating].to_i.times do %>
             <i class="fa-solid fa-star"></i>
           <%end%>
-
           <% (5-annoyance[:rating]).to_i.times do %>
             <i class="fa-regular fa-star"></i>
           <%end%>
           <br>
           <%= annoyance.price %> <i class="fa-solid fa-euro-sign"></i>
         </div>
-
         <div class="annoyance-price-available">
-
             <% if annoyance[:availability] %>
               <div class="available">
               <%= "available" %>
