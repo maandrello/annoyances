@@ -9,11 +9,14 @@
 </div>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/laughing-emoji-faced-friends_53876-90855.jpg);">
   <div class="container">
-    <h1>Welcome to <strong>Annoyance!</strong></h1>
-    <br>
-    <p>Our concept is simple: Book an Annoyance to play a <strong>prank</strong> on somebody you know!</p>
-    <p>If you have a nice idea and you want to sell your prank, please join us and click below:</p>
-    <%= link_to "I want to sell my prank!", new_annoyance_path, class: "btn-ghost-banner background-color-lightgrey text-black"%>
+    <h1>Welcome to Annoyance!</h1>
+      <p>Our concept is simple: Book an Annoyance to play a prank on somebody you know!</p>
+    <p class="buttonhp">
+      <%= link_to "List your annoyance", new_annoyance_path, class: "btn btn-ghost text-white"%>
+    </p>
+    <p class="buttonhp">
+      <%= link_to "Discover the annoyances", annoyances_path, class: "btn btn-ghost text-white"%>
+    </p>
   </div>
 </div>
 
