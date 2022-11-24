@@ -1,18 +1,20 @@
 <div class ="card-create-annoyance">
-  <h1>Annoy people and earn money! (legally)</h1>
+  <h1>Annoy people and earn money (legally)!</h1>
 </div>
 
-<div class ="d-flex justify-content-between">
+<div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZnVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+>
+    <img class= "rounded py-3 shadow" alt="">
   <div class="container py-3">
   <div>
       <div class="col-12 col-md-6 offset-lg-3">
           <div class="bg-white rounded p-3 shadow">
             <%= simple_form_for @annoyance do |f| %>
-              <%= f.input :name, placeholder: "What's your name" %>
+              <%= f.input :name, placeholder: "Give your prank a catchy title" %>
               <%= f.input :description, placeholder: "Tell us what your plan is " %>
               <%= f.input :category, collection: Annoyance::CATEGORIES %>
               <%= f.input :price, placeholder: "How much are you gonna charge?"%>
-              <%= f.input :availability %>
+              <%# <%= f.input :availability %>
               <%= f.input :photo %>
               <%= f.submit %>
             <% end %>
@@ -21,11 +23,11 @@
     </div>
   </div>
   <div>
-    <img class= "rounded py-3 shadow" src="https://images.unsplash.com/photo-1466921583968-f07aa80c526e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZnVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
   </div>
 </div>
 
 <br>
 <br>
-
-<%= link_to "Go back", annoyances_path, class: 'btn-ghost' %>
+<div class="mb-3">
+  <%= link_to "Go back", annoyances_path, class: 'btn-ghost mb-4' %>
+</div>
