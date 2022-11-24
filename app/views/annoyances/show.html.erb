@@ -1,33 +1,37 @@
-<h1 text-center><%= @annoyance.name %></h1>
-
-<%= cl_image_tag @annoyance.photo.key, height: 300, width: 400, crop: :fill %>
-<br>
-<br>
-<br>
-<ul>
-  <p><extra-strong>Description:</extra-strong> </p><ol><%= @annoyance.description %></ol>
-  <br>
-  <p><extra-strong>Price(€):</extra-strong> </p><ol><strong><%=@annoyance.price%></strong></ol>
-  <br>
-  <p><extra-strong>Category:</extra-strong></p><ol><%= @annoyance.category %></ol>
-  <br>
-  <p><extra-strong>Rating:</extra-strong></p><ol><%= @annoyance.rating %> ⭐ </ol>
-  </ul>
-</ul>
-
-<br>
-<br>
-
-<a href="">
-  <div class="button">
-    <%= link_to 'Buy an Annoyance',  new_annoyance_booking_path(@annoyance), class: 'btn-ghost'%>
-  </div>
-</a>
-<br>
-<br>
-<br>
-
 <%= link_to 'Annoyances index', annoyances_path, class: 'btn-ghost'%>
+<br>
+<br>
+<div class="card-product">
+  <%= cl_image_tag @annoyance.photo.key%>
 
+
+  <div class="card-product-infos">
+    <h1><%= @annoyance.name %></h1>
+    <h6><strong>Description</strong></h6>
+    <%= @annoyance.description %>
+    <br>
+    <br>
+
+    <div class="price-category">
+      <div>
+        <h6><strong>Price</strong> </h6>
+        <%=@annoyance.price%>€
+      </div>
+      <div>
+        <h6><strong>Category</strong></h6>
+        <%= @annoyance.category %>
+      </div>
+      <div>
+        <h6><strong>Rating</strong></h6>
+        <p><%= @annoyance.rating %> ⭐ </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="icon-float">
+  <%= link_to 'Buy an Annoyance',  new_annoyance_booking_path(@annoyance), class: 'btn-ghost'%>
+</div>
+<br>
 <br>
 <br>
