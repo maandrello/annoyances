@@ -10,7 +10,7 @@
         <%= simple_form_for @annoyance do |f| %>
           <%= f.input :name %>
           <%= f.input :description %>
-          <%= f.input collection: Annoyance::CATEGORIES %>
+          <%= f.input :category, collection: Annoyance::CATEGORIES %>
           <%= f.input :price %>
           <%= f.input :availability %>
           <%= f.input :photo %>
