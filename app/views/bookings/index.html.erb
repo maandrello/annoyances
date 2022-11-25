@@ -1,10 +1,27 @@
-<h1>Annoyance's bookings</h1>
 
-<ul>
-  <% @annoyance.bookings.each do |booking| %>
-    <li> <%= booking.target %> </li>
+<div class="card text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
+  <div class="card-header">
+    You annoyance has been booked!
+  </div>
+
+    <h3>You have work!</h3>
+    <% @annoyance.bookings.each do |booking| %>
+      <div class="job-card">
+        <p>You will annoy ... <strong><%= booking.target %></strong></p>
+        <p>You will ... <strong><%= booking.info %></strong></p>
+      </div>
     <% end %>
-</ul>
 
+    <p class="card-text">Be mindful and remember to follow your local guidelines to stay legal!</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    annoyance, your way to prank your friends
+  </div>
+</div>
+
+
+
+</div>
 
 <%= link_to "Go back", annoyances_path, class: 'btn-ghost' %>
