@@ -10,13 +10,13 @@ User.destroy_all
 
 User.create(email: "maria@mail.com", password: "123456")
 user = User.last
-file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132922/Annoyances/albert_eggstein_zmeilr.jpg")
+file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669384453/Annoyances/0_chicken_vhe1zz.png")
 annoy = Annoyance.new(name: "Albert Eggstein", description: "You can rent Albert Eggstein to annoy your loved one. Albert Eggstein will be more than happy to chase him if he starts running and he is the most annoying singer that there is, singing at the most inappropriate times you can think of", category: "Animals", price: 50, availability: true, rating: 2)
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
 
-file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132924/Annoyances/beans_xllyfv.jpg")
+file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669384453/Annoyances/macaca_nigra_self-portrait-3e0070aa19a7fe36e802253048411a38f14a79f8-s1100-c50_iiwp4o.jpg")
 annoy = Annoyance.new(name: "Beans", description: "Beans is a very friendly chimpanzee and loves hugging people. He’s not very good at understanding personal space and can be very annoying.", category: "Animals", price: 500, availability: true, rating: 2)
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -40,7 +40,7 @@ annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
 
-file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132923/Annoyances/call_id_ihfgvm.jpg")
+file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669384453/Annoyances/0_alarm_hfxocl.png")
 annoy = Annoyance.new(name: "Alarms", description: "Is there anything more annoying than being awake when you could still be profoundly sleeping? There isn’t, right? So, if you want to get back to your friend, you can hire me to sneak inside his home and set all of his alarms to go off every five minutes right in the middle of the night. But be careful, he will definitely want to get you back for this.", category: "Sounds", price: 100, availability: true, rating: 5 )
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
