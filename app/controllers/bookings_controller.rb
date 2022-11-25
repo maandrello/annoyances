@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.annoyance = @annoyance
     @booking.user = current_user
     if @booking.save
-      redirect_to annoyance_bookings_path(@annoyance)
+      redirect_to annoyance_path(@annoyance), notice: "You booked successfully"
     else
       render :new, status: :unprocessable_entity
     end
