@@ -1,19 +1,19 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bestlifeonline.com/wp-content/uploads/sites/3/2018/05/Friends-Laughing.jpg?quality=82&strip=all);">
   <div class="container">
     <h1>Welcome to Annoyance!</h1>
-    <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <p><strong> Our concept is simple: Book an Annoyance to play a prank on somebody you know.</strong></p>
       <p>If you want to join us and create a new annoyance, please clink here:</p>
-    <p class="buttonhp">
-      <%= link_to "Create a new annoyance", new_annoyance_path, class: "btn btn-ghost-principal text-white"%>
-    </p>
+      <p class="buttonhp">
+        <%= link_to "Create a new annoyance", new_annoyance_path, class: "btn-ghost-principal"%>
+       </p>
   </div>
 </div>
-<br>
-
-
-<br>
-
+  <br>
+  <br>
   <br>
 </div>
 
@@ -28,49 +28,55 @@
       <% end %>
       <br>
 
-  <div class="cards">
-    <% @annoyances.order(:name).each do |annoyance| %>
-      <div class="cards-annoyance">
-        <div>
-          <% if annoyance.photo.attached? %>
-            <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <% image_tag "stock.png" %>
-          <% end %>
-        </div>
-        <div class="cards-annoyance-infos">
-          <div>
-            <%= link_to annoyance.name, annoyance_path(annoyance) %>
-            <br>
-            <%= annoyance.category %>
-          </div>
-          <div>
-            <% unless annoyance.rating.nil? %>
-            <p></i><%annoyance.rating do %></p>
-            <%end%>
-            <p class="rating"><%(5-annoyance.rating).to_i.times do %></p>
-            <%end%>
-          <%end%>
-            <br>
-             <p class="fa-solid-fa-euro-sign"><%= annoyance.price %> € </p>
-          </div>
-          <div class="annoyance-price-available">
-              <% if annoyance[:availability] %>
-                <div class="available">
-                <%= "Available" %>
-                </div>
-              <%else%>
-                <div class="outofstock" >
-                  <%= "Out of stock" %>
-                </div>
-              <%end%>
-          </div>
-        </div>
+<div class="cards">
+  <% @annoyances.order(:name).each do |annoyance| %>
+    <div class="cards-annoyance">
+      <div>
+        <% if annoyance.photo.attached? %>
+          <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <% image_tag "stock.png" %>
+        <% end %>
       </div>
-    <% end %>
-    <br>
-    <br>
+
+
+<div class="cards-annoyance-infos">
+  <div>
+    <%= link_to annoyance.name, annoyance_path(annoyance) %>
+      <br>
+    <%= annoyance.category %>
   </div>
+
+  <div>
+    <% unless annoyance.rating.nil? %>
+      <p></i><%annoyance.rating do %></p>
+      <%end%>
+      <p class="rating"><%(5-annoyance.rating).to_i.times do %></p>
+      <%end%>
+    <%end%>
+    <br>
+      <p class="fa-solid-fa-euro-sign"><%= annoyance.price %> € </p>
+  </div>
+
+  <div class="annoyance-price-available">
+    <% if annoyance[:availability] %>
+      <div class="available">
+      <%= "Available" %>
+      </div>
+    <%else%>
+      <div class="outofstock" >
+        <%= "Out of stock" %>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+
+</div>
+<% end %>
+<br>
+<br>
+</div>
 </div>
 <br>
 <br>
