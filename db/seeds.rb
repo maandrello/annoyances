@@ -53,13 +53,13 @@ annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
 
 file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132924/Annoyances/lama.jpg")
-annoy = Annoyance.new(name: "Banallama", description: "Is that annoying childhood friend getting married and you have no idea what to get him? We have an idea! Banallama is the option for you! She can make a special participation in their reception. Of course we can not guarantee that no incidents will happen (aka spit risk).", category: "Animals", price: 700, availability: true, rating: 2 )
+annoy = Annoyance.new(name: "Banalhama", description: "Is that annoying childhood friend getting married and you have no idea what to get him? We have an idea! Banallama is the option for you! She can make a special participation in their reception. Of course we can not guarantee that no incidents will happen (aka spit risk).", category: "Animals", price: 700, availability: true, rating: 2 )
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
 
 file = URI.open("https://res.cloudinary.com/dekzlt7wx/image/upload/v1669132923/Annoyances/call_id_ihfgvm.jpg")
-annoy = Annoyance.new(name: "Call id", description: "Are you tired of having to deal with your friends pea-brain ideas? We know the perfect way to waste their time! Every day, at a specific time, we will call him and tell random stuff for 1 minute straight. Don’t be surprised if he ends up changing his number.", category: "Sounds", price: 200, availability: true, rating: 2 )
+annoy = Annoyance.new(name: "Call ID", description: "Are you tired of having to deal with your friends pea-brain ideas? We know the perfect way to waste their time! Every day, at a specific time, we will call him and tell random stuff for 1 minute straight. Don’t be surprised if he ends up changing his number.", category: "Sounds", price: 200, availability: true, rating: 2 )
 annoy.user = user
 annoy.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 annoy.save
