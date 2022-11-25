@@ -9,14 +9,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-
   <body>
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon color:">
       <div class="container-fluid">
         <%= link_to annoyances_path, class: "navbar-brand" do %>
           <%= image_tag "stock.png" %>
         <% end %>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
