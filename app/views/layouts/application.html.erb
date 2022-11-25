@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon color:">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon color:">
       <div class="container-fluid">
         <%= link_to annoyances_path, class: "navbar-brand" do %>
           <%= image_tag "stock.png" %>
@@ -49,6 +49,7 @@
     <%# <p class="alert"><%= alert %>
 
     <%= yield %>
+  </div>
     <div class="footer">
       <div class="footer-links">
         <a href="#">About us</a>
@@ -57,6 +58,5 @@
         <a href="#"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
-  </div>
   </body>
 </html>
