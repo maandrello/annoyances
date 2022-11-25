@@ -1,5 +1,5 @@
 <div class ="card-create-annoyance">
-  <h1>Annoy people and earn money! (legally)</h1>
+  <h1>Tell us more about your target</h1>
 </div>
 
 <div class ="d-flex justify-content-between">
@@ -10,9 +10,8 @@
         <p>Please include your availability</p>
         <%= f.input :target, placeholder: "Who's the lucky one?" %>
           <%= f.input :info, placeholder: "Anything important we should know?" %>
-          <%= f.input :starting_time %>
-          <%= f.input :ending_time %>
-          <%= f.submit class: 'btn-danger' %>
+          <%= f.input :created_at, label: "When to prank?",html5: true %>
+          <%= f.submit 'Annoy!', class: 'btn-danger' %>
         <% end %>
       </div>
     </div>
@@ -20,6 +19,6 @@
 </div>
 
 <div>
-<%= link_to "List of Bookings", annoyance_bookings_path(@annoyance), class: 'btn-ghost' %>
-<%= link_to "Go back", annoyances_path, class: 'btn-ghost'%>
+  <%= link_to "List of Bookings", annoyance_bookings_path(@annoyance), class: 'btn-ghost' %>
+  <%= link_to "Go back", annoyances_path, class: 'btn-ghost'%>
 </div>
