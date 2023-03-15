@@ -1,82 +1,53 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bestlifeonline.com/wp-content/uploads/sites/3/2018/05/Friends-Laughing.jpg?quality=82&strip=all);">
-  <div class="container">
-    <h1>Welcome to Annoyance!</h1>
-      <br>
-      <br>
-      <br>
-      <br>
-      <p><strong> Our concept is simple: Book an Annoyance to play a prank on somebody you know.</strong></p>
-      <p>If you want to join us and create a new annoyance, please click here:</p>
-      <p class="buttonhp">
-        <%= link_to "Create a new annoyance", new_annoyance_path, class: "btn-ghost-principal"%>
-       </p>
-  </div>
-</div>
-  <br>
-  <br>
-  <br>
+<div class="banner">
+  <h1>Welcome to Annoyance!</h1>
+  <p>Our concept is simple: Book an Annoyance to play a prank on somebody you know</p>
+  <p>If you want to join us and create a new annoyance, please click here:</p>
+  <%= link_to "Create a new annoyance", new_annoyance_path, class: "btn-ghost-principal"%>
 </div>
 
-<div class="container">
-  <div class="searching-annoyance" >
-      <%= form_with url: annoyances_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a annoyance" %>
-        <%= submit_tag "Search", class: "btn-ghost" %>
+<%= form_with url: annoyances_path, method: :get, class: "d-flex" do %>
+<%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Find a annoyance" %>
+  <%= submit_tag "Search", class: "btn-ghost" %>
+<% end %>
+
+<div class="product-card">
+  <div class="product-image">
+    <% @annoyances.order(:name).each do |annoyance| %>
+      <% if annoyance.photo.attached? %>
+        <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <% image_tag "stock.png" %>
       <% end %>
-      <br>
-
-<div class="cards">
-  <% @annoyances.order(:name).each do |annoyance| %>
-    <div class="cards-annoyance">
-      <div>
-        <% if annoyance.photo.attached? %>
-          <%= cl_image_tag annoyance.photo.key, height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <% image_tag "stock.png" %>
-        <% end %>
-      </div>
-
-
-<div class="cards-annoyance-infos">
-  <div>
-    <%= link_to annoyance.name, annoyance_path(annoyance) %>
-      <br>
-    <%= annoyance.category %>
   </div>
-
-  <div>
+  <div class="product-name">
+    <span class="product-category"><%= annoyance.category %></span>
+    <%= link_to annoyance.name, annoyance_path(annoyance), style: 'color:#F28F3B' %>
+  </div>
+  <div class="product-rating">
     <% unless annoyance.rating.nil? %>
       <p></i><%annoyance.rating do %></p>
       <%end%>
       <p class="rating"><%(5-annoyance.rating).to_i.times do %></p>
       <%end%>
     <%end%>
-    <br>
-      <p class="fa-solid-fa-euro-sign"><%= annoyance.price %> € </p>
   </div>
-
-  <div class="annoyance-price-available">
-    <% if annoyance[:availability] %>
-      <div class="available">
-      <%= "Available" %>
-      </div>
-    <%else%>
-      <div class="outofstock" >
-        <%= "Out of stock" %>
-      </div>
-    <%end%>
+  <div class="product-bottom">
+    <div class="product-price">
+    <p><%= annoyance.price %>€</p>
+    </div>
+    <div class="product-book">
+    <%= link_to "Book this annoyance", annoyance_path(annoyance), class: "btn"%>
+    </div>
   </div>
+  <%# <div class="product-availability"> %>
+    <%# <% if annoyance[:availability] %>
+      <%# <%= "Available" %>
+    <%# <%else%>
+      <%# <%= "Out of stock" %>
+    <%# <%end%>
+  <%# </div> %>
+  <% end %>
 </div>
-
-
-</div>
-<% end %>
-<br>
-<br>
-</div>
-</div>
-<br>
-<br>
